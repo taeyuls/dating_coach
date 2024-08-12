@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"
+    />
+    <meta
+      property="og:url"
+      content="https://oz-lovecoach-seminar.netlify.app/"
+    />
+    <meta property="og:title" content="연애코치 김태율 by.Taeyul" />
+    <meta
+      property="og:image"
+      content="https://oz-lovecoach-seminar.netlify.app/images/mbtiChat_opengraph_img.png"
+    />
+    <meta
+      property="og:description"
+      content="태율이에게 고민을 털어놓아보세요!"
+    />
+    <link rel="icon" href="./images/mbtiChat_oz_icon.png" />
+    <title>연애코치 김태율 by.Taeyul</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/ad-banner.css" />
+  </head>
+  <body>
+    <div class="splash-screen" id="splashScreen">
+      <div class="splashWrapper">
+        <p class="splash_touch">Touch!</p>
+        <img
+          class="splash_logo"
+          src="./images/mbtiChat_logo-3.png"
+          alt="AI 연애코치"
+        />
+        <p class="splash_text">
+          연애코치 미리 만들었잖아?<br />
+          <b>사랑싸움 그딴거 안 했어</b>
+        </p>
+      </div>
+    </div>
+
+    <div class="wrapper hidden" id="mainContent">
+      <div class="formWrapper">
+        <h2 class="header">연애코치 김태율</h2>
+        <form id="detailsForm" autocomplete="off" class="formContainer">
+          <div class="form_input_wrapper">
+            <div class="form_item">
+              <label for="relationshipInput">관계</label>
+              <select id="relationshipInput" required>
+                <option value="" disabled selected>선택</option>
+                <option value="연애">연애</option>
+                <option value="썸">썸</option>
+                <option value="솔로">솔로</option>
+                <option value="짝사랑">짝사랑</option>
+                <option value="이별">이별</option>
+              </select>
+              <svg
+                class="arrow-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="11"
+                height="7"
+                viewBox="0 0 11 7"
+                fill="none"
+              >
+                <path d="M0.853516 1L5.35352 6L9.85352 1" stroke="black" />
+              </svg>
+            </div>
+
+            <div class="form_item">
+              <label for="durationYears">기간</label>
+              <div class="durationWrapper">
+                <div class="custom-number-input">
+                  <input type="number" id="durationYears" min="0" value="0" />
+                  <div class="custom-buttons">
+                    <button
+                      type="button"
+                      class="increment"
+                      onclick="changeValue('durationYears', 1)"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="9"
+                        height="5"
+                        viewBox="0 0 9 5"
+                        fill="none"
+                      >
+                        <path d="M8 4L4.5 1L0.999999 4" stroke="black" />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      class="decrement"
+                      onclick="changeValue('durationYears', -1)"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="9"
+                        height="5"
+                        viewBox="0 0 9 5"
+                        fill="none"
+                      >
+                        <path d="M1 1L4.5 4L8 1" stroke="black" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <span>년</span>
+                <div class="custom-number-input">
+                  <input
+                    type="number"
+                    id="durationMonths"
+                    min="0"
+                    max="11"
+                    value="0"
+                  />
+                  <div class="custom-buttons">
+                    <button
+                      type="button"
+                      class="increment"
+                      onclick="changeValue('durationMonths', 1)"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="9"
+                        height="5"
+                        viewBox="0 0 9 5"
+                        fill="none"
+                      >
+                        <path d="M8 4L4.5 1L0.999999 4" stroke="black" />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      class="decrement"
+                      onclick="changeValue('durationMonths', -1)"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="9"
+                        height="5"
+                        viewBox="0 0 9 5"
+                        fill="none"
+                      >
+                        <path d="M1 1L4.5 4L8 1" stroke="black" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <span>개월</span>
+              </div>
+            </div>
+
+            <div class="form_item border-bottom_none">
+              <label for="storyInput">당신의 사연을 들려주세요.</label>
+              <textarea
+                id="storyInput"
+                rows="3"
+                placeholder="자유롭게 작성해주세요"
+                required
+                autocomplete="off"
+              ></textarea>
+            </div>
+
+            <div class="form_item_2">
+              <div class="form_item">
+                <label for="myMbtiInput">나의 mbti</label>
+                <select class="input_box" id="myMbtiInput" required>
+                  <option value="" disabled selected>선택</option>
+                  <option value="ISTJ">ISTJ</option>
+                  <option value="ISTP">ISTP</option>
+                  <option value="INFJ">INFJ</option>
+                  <option value="INTJ">INTJ</option>
+                  <option value="ISFJ">ISFJ</option>
+                  <option value="ISFP">ISFP</option>
+                  <option value="INFP">INFP</option>
+                  <option value="INTP">INTP</option>
+                  <option value="ESTJ">ESTJ</option>
+                  <option value="ESFP">ESFP</option>
+                  <option value="ENFP">ENFP</option>
+                  <option value="ENTP">ENTP</option>
+                  <option value="ESFJ">ESFJ</option>
+                  <option value="ESTP">ESTP</option>
+                  <option value="ENFJ">ENFJ</option>
+                  <option value="ENTJ">ENTJ</option>
+                </select>
+                <svg
+                  class="arrow-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="11"
+                  height="7"
+                  viewBox="0 0 11 7"
+                  fill="none"
+                >
+                  <path d="M0.853516 1L5.35352 6L9.85352 1" stroke="black" />
+                </svg>
+              </div>
+
+              <div class="form_item">
+                <label for="youMbtiInput">상대방 mbti</label>
+                <select class="input_box" id="youMbtiInput" required>
+                  <option value="" disabled selected>선택</option>
+                  <option value="ISTJ">ISTJ</option>
+                  <option value="ISTP">ISTP</option>
+                  <option value="INFJ">INFJ</option>
+                  <option value="INTJ">INTJ</option>
+                  <option value="ISFJ">ISFJ</option>
+                  <option value="ISFP">ISFP</option>
+                  <option value="INFP">INFP</option>
+                  <option value="INTP">INTP</option>
+                  <option value="ESTJ">ESTJ</option>
+                  <option value="ESFP">ESFP</option>
+                  <option value="ENFP">ENFP</option>
+                  <option value="ENTP">ENTP</option>
+                  <option value="ESFJ">ESFJ</option>
+                  <option value="ESTP">ESTP</option>
+                  <option value="ENFJ">ENFJ</option>
+                  <option value="ENTJ">ENTJ</option>
+                </select>
+                <svg
+                  class="arrow-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="11"
+                  height="7"
+                  viewBox="0 0 11 7"
+                  fill="none"
+                >
+                  <path d="M0.853516 1L5.35352 6L9.85352 1" stroke="black" />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+            </div>
+          </button>
+        </form>
+
+        <div class="btnContainer">
+          <button class="submitBtn" type="submit" form="detailsForm">
+            태율이에게 상담하기
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

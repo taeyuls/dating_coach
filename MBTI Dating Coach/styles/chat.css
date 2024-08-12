@@ -1,0 +1,291 @@
+@import url(./styles.css);
+:root {
+  --vh: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.chatWrapper {
+  border: 1px solid #eaeaea;
+  width: 100%;
+  max-width: 360px;
+  max-height: 788px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.headerWrapper {
+  text-align: center;
+  color: #000000;
+  background-color: #fff;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 30px 16px 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.headerWrapper a {
+  text-decoration: none; /* 링크의 밑줄 제거 */
+  color: inherit; /* 링크의 색상 제거 */
+}
+
+.header {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.home {
+  position: absolute;
+  left: 16px;
+  top: 60%;
+  transform: translateY(-50%);
+}
+
+.home img {
+  width: 28.5px;
+}
+
+#chatContainer {
+  padding: 25px 20px 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+#chatList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#chatContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+#chatContainer::-webkit-scrollbar-thumb {
+  height: 10%;
+  background: #e7e7e7;
+  border-radius: 10px;
+}
+
+#chatContainer::-webkit-scrollbar-thumb:hover {
+  background: #bdbdbd;
+}
+
+#chatContainer::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.message {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.message:last-child {
+  margin-bottom: 0;
+}
+
+.user-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.user-message .bubble {
+  /* user-message의 내부에 있는 bubble 선택 */
+  border-radius: 24px;
+  border: 1px solid #efefef;
+  background: #34044f;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  padding: 10px 16px;
+  max-width: 90%;
+  /* margin-top: 10px; */
+}
+
+.coach-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.coach-message .bubble {
+  border-radius: 27px;
+  border: 1px solid #efefef;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 136%;
+  padding: 12px 16px;
+  max-width: 90%;
+  margin-top: 10px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  overflow: hidden;
+}
+.user-message .avatar {
+  margin-left: 8px;
+  display: none;
+}
+.coach-message .avatar {
+  margin-right: 8px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sendContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 20px 20px 30px;
+}
+
+#userInput {
+  flex: 1;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+  background: #fff;
+  outline: none;
+  resize: none;
+  max-height: 6em; /* 최대 높이 설정 (3줄) */
+  height: 54px;
+  overflow-y: hidden; /* 스크롤 바 숨김 */
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+#userInput::placeholder {
+  color: #c6c6c6;
+}
+
+#userInput::-webkit-scrollbar {
+  width: 0px; /* 스크롤바의 너비를 0으로 설정하여 보이지 않게 함 */
+  background: transparent; /* 배경을 투명하게 설정 */
+}
+
+#sendButton {
+  width: 39px;
+  height: 54px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+#sendButton img {
+  width: 39px;
+}
+
+#sendButton:disabled {
+  /* background-color: #e90074; */
+}
+
+/* 스피너 색상 변경 */
+.custom-spinner {
+  color: #fff; /* 스피너의 색상을 흰색으로 설정 */
+}
+
+.typing-animation::after {
+  content: "답변을 작성하는 중입니다";
+  animation: typing-animation 1.5s infinite steps(3);
+  min-width: 180px;
+  width: 100%;
+  display: inline-block;
+}
+
+@keyframes typing-animation {
+  0% {
+    content: "답변을 작성하는 중입니다.";
+  }
+  33% {
+    content: "답변을 작성하는 중입니다..";
+  }
+  66% {
+    content: "답변을 작성하는 중입니다...";
+  }
+  100% {
+    content: "답변을 작성하는 중입니다.";
+  }
+}
+
+.bubble p {
+  /* margin-bottom: 8px; /* 행간 간격 조정 */
+}
+
+.bubble ul,
+.bubble ol {
+  margin-top: 0;
+  margin-bottom: 8px; /* 리스트 항목 사이 간격 조정 */
+}
+
+.bubble li {
+  margin-bottom: 8px; /* 리스트 항목 사이 간격 조정 */
+}
+
+/* 광고 배너 */
+.ad-banner {
+  background-color: #f7f7f7 !important;
+}
+
+@media screen and (max-width: 992px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+  }
+
+  .chatWrapper {
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  #chatContainer {
+    font-size: 14px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+
+  #userInput {
+    /* font-size: 14px; */
+  }
+}

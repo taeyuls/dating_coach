@@ -1,0 +1,51 @@
+/* 광고 배너 */
+.ad-banner {
+  padding: 12.5px 20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: stretch;
+  cursor: pointer;
+  border: none;
+}
+
+.ad-banner__image {
+  flex: 1;
+}
+
+.ad-banner__content {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.ad-banner__text {
+}
+
+.ad-banner__tit {
+  color: #a0a0a0;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.ad-banner__title {
+  color: #464646;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 131%;
+}
+
+.ad-banner__button {
+  padding: 7px 15px;
+  border-radius: 2px;
+  background: #111;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 140%;
+}

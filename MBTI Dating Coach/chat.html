@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"
+    />
+    <meta
+      property="og:url"
+      content="https://oz-lovecoach-seminar.netlify.app/"
+    />
+    <meta property="og:title" content="연애코치 김태율" />
+    <meta
+      property="og:image"
+      content="https://oz-lovecoach-seminar.netlify.app/images/mbtiChat_opengraph_img.png"
+    />
+    <meta
+      property="og:description"
+      content="태율이에게 고민을 털어놓아보세요!"
+    />
+    <link rel="icon" href="./images/mbtiChat_oz_icon.png" />
+    <title>연애코치 김태율</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="styles/chat.css" />
+    <link rel="stylesheet" href="styles/ad-banner.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="chatWrapper">
+        <div class="headerWrapper">
+          <div class="home">
+            <a href="index.html">
+              <img src="./images/mbtiChat_back.png" alt="" />
+            </a>
+          </div>
+          <h2 class="header">연애코치 김태율</h2>
+          <div></div>
+        </div>
+
+          </div>
+
+
+
+          </div>
+        </button>
+        <div id="chatContainer">
+          <div id="chatList"></div>
+        </div>
+        <div class="sendContainer">
+          <textarea
+            id="userInput"
+            placeholder="자유롭게 질문해보세요."
+            rows="1"
+          ></textarea>
+          <button id="sendButton" disabled>
+            <span
+              id="loadingMessage"
+              class="loading-message"
+              style="display: none"
+              ><img src="./images/mbtiChat_loading.png" alt="img" /></span
+            ><span id="sendButtonText"
+              ><img src="./images/mbtiChat_send.png" alt="img"
+            /></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        function setVh() {
+          let vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty("--vh", `${vh}px`);
+        }
+
+        window.addEventListener("resize", setVh);
+        window.addEventListener("orientationchange", setVh);
+        setVh();
+
+        document.querySelectorAll("input, textarea").forEach((element) => {
+          element.addEventListener("focus", setVh);
+          element.addEventListener("blur", setVh);
+        });
+      });
+    </script>
+
+
+    <script type="module" src="js/chat.js"></script>
+  </body>
+</html>

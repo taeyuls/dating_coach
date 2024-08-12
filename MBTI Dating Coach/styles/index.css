@@ -1,0 +1,368 @@
+@import url(./styles.css);
+
+:root {
+  --vh: 100%;
+}
+
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.splashWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url("../images/mbtiChat_pattern_bg.png") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  cursor: pointer;
+}
+.banner_bg {
+  width: 100%;
+  height: 74px;
+  background: #dd272d;
+}
+
+.splash_touch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 12rem;
+  color: #e7565b;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 180%;
+  text-align: center;
+  z-index: 10;
+  animation: blink 1.2s infinite alternate, scaleUp 1.2s infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.splash_logo {
+  position: absolute;
+  width: 250px;
+  filter: drop-shadow(2.505px 3.506px 5.81px rgba(43, 43, 43, 0.22));
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.splash_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 8.5rem;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 180%;
+  text-align: center;
+  z-index: 10;
+}
+
+.splash_company {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 15rem;
+  width: 141px;
+  z-index: 10;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.formWrapper {
+  border: 1px solid #f2f2f2;
+  width: 100%;
+  max-width: 360px;
+  /* max-height: 788px; */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.header {
+  text-align: center;
+  padding: 30px 0 17px;
+  border-bottom: 1px solid #f1f1f1;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 144%;
+  margin: 0;
+}
+
+.formContainer {
+  flex-grow: 1; /* formContainer가 남은 공간을 모두 차지하도록 설정 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 내부 요소들을 수직으로 배치 */
+  overflow-y: auto;
+  /* background-color: #f6f8f9; */
+}
+
+.form_item {
+  width: 100%;
+  padding: 20px;
+  font-size: 14px;
+  position: relative;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.form_item_2 {
+  width: 100%;
+  padding: 20px;
+  font-weight: 400;
+  line-height: 140%;
+  position: relative;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_item_2 .form_item {
+  padding: 0;
+  border-bottom: none;
+}
+
+.form_item_2 input::placeholder {
+  color: #cecece;
+}
+
+.form_item_2 input {
+  border-radius: 7px;
+  border: 1px solid #e8e8e8;
+  padding: 10px 16px;
+  color: #434343;
+}
+
+label {
+  color: #7b7b7b;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  outline: none;
+  resize: none;
+  appearance: none; /* 기본 스타일을 없앰 */
+  -webkit-appearance: none; /* WebKit 브라우저에서 기본 스타일을 없앰 */
+  -moz-appearance: none; /* Firefox에서 기본 스타일을 없앰 */
+}
+
+.input_box {
+  border-radius: 7px;
+  border: 1px solid #e8e8e8;
+  background: #f7f7f7;
+  padding: 9px 16px;
+  padding-right: 30px; /* SVG 아이콘 영역 확보 */
+  color: #7f7f7f;
+}
+
+#relationshipInput {
+  border-radius: 7px;
+  border: 1px solid #e8e8e8;
+  background: #f7f7f7;
+  padding: 9px 16px;
+  padding-right: 30px; /* SVG 아이콘 영역 확보 */
+  color: #7f7f7f;
+}
+
+.arrow-1 {
+  position: absolute;
+  bottom: 36px;
+  right: 37px;
+  pointer-events: none; /* 클릭 이벤트가 무시되도록 설정 */
+}
+
+.arrow-2 {
+  position: absolute;
+  bottom: 18px;
+  right: 13px;
+  pointer-events: none; /* 클릭 이벤트가 무시되도록 설정 */
+}
+
+.durationWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 9px;
+}
+
+.custom-number-input {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 7px;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.durationWrapper .custom-number-input:last-of-type {
+  margin-left: 10px; /* 원하는 margin 값으로 설정 */
+}
+
+.custom-number-input input {
+  width: 60px;
+  text-align: center;
+  border: none;
+  outline: none;
+  -moz-appearance: textfield;
+  appearance: none;
+  padding: 9px 16px;
+  padding-right: 25px; /* 버튼 영역 확보 */
+  color: #434343; /* 기본 텍스트 색상 */
+}
+
+.custom-number-input input::-webkit-outer-spin-button,
+.custom-number-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom-number-input input.placeholder-visible {
+  color: #cecece; /* placeholder처럼 보이도록 회색으로 설정 */
+}
+
+.custom-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  height: 100%;
+}
+
+.custom-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 25px; /* 버튼 너비 */
+  height: 35%; /* 버튼 높이 */
+}
+
+.custom-buttons button:hover {
+  background: none;
+}
+
+.custom-buttons button svg {
+  pointer-events: none; /* SVG 아이콘 클릭 방지 */
+}
+
+#storyInput {
+  resize: none;
+  border-radius: 7px;
+  border: 1px solid #e8e8e8;
+  padding: 10px 16px;
+  color: #434343;
+}
+
+#storyInput::placeholder {
+  color: #cecece;
+}
+
+.btnContainer {
+  padding: 0 20px 30px;
+  width: 100%;
+  background-color: #f7f7f7;
+}
+
+.submitBtn {
+  padding: 18px 0;
+  border: none;
+  border-radius: 5px;
+  background: #440008;
+  box-shadow: 0px 4px 10px 0px rgba(43, 43, 43, 0.2);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  /* background-color: #e90074; */
+}
+
+/* 광고 배너 */
+.ad-banner {
+  background-color: #f7f7f7 !important;
+}
+
+@media screen and (max-width: 992px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+  }
+
+  .splash_touch {
+    font-size: 24px;
+    padding-bottom: 11rem;
+  }
+
+  .formWrapper {
+    border: none;
+    border-radius: 0;
+    max-height: 100%;
+  }
+}
