@@ -1,5 +1,5 @@
 // Open API에서 발급받은 key를 `` 사이에 입력하세요.
-const YOUR_OPEN_AI_API_KEY = ``;
+const YOUR_OPEN_AI_API_KEY = `sk-S-35bMRDMPv9I2FxKMZDw-YkeVKGOURXMtxGE01FqCT3BlbkFJQjBJs-wWuA7KjZxi_BhIVvqDRJHZKWyoLCLrLkiJUA`;
 // 강의에서 설명한 대로 URI를 `` 사이에 입력하세요.
 const OPENAI_API = `https://api.openai.com/v1/chat/completions`;
 // OpenAI API에 메시지를 보내고 응답을 받는 함수
